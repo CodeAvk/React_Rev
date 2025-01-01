@@ -188,7 +188,7 @@ function getTotalReviewCount(book) {
 const books = getBooks();
 
 const doubles = [1, 2, 3, 4].map((el) => el * 2);
-doubles;
+// doubles;
 
 const titles = books.map((book) => book.title);
 titles;
@@ -223,6 +223,17 @@ const essentialData = books.map((book) => ({
 // const sorted=arr.sort((a, b) => b - a);
 // sorted
 
-fetch("https://jsonplaceholder.typicode.com/todos")
-  .then((res) => res.json())
-  .then((data) => console.log(data));
+// fetch("https://jsonplaceholder.typicode.com/todos")
+//   .then((res) => res.json())
+//   .then((data) => console.log(data));
+
+async function getData() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await res.json();
+  console.log("data : ", data);
+
+  return data;
+}
+const data_1 = getData();
+console.log(data_1);
+// getData();
